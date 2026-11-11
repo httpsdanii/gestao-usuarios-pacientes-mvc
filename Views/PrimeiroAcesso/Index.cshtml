@@ -1,0 +1,39 @@
+﻿@using PrjIMV_MVC_CORE.Models.LoginModel
+@model PrimeiroAcessoModel
+
+<form asp-action="Index" method="post">
+    <div>
+
+        <h2>Troca de Senha do Sistema</h2>
+        <div>
+            <label asp-for="SenhaA" style="width:80px"></label>
+            <input asp-for="SenhaA" style="width:150px" />
+        </div>
+        <div>
+            <label asp-for="SenhaB" style="width:80px"></label>
+            <input asp-for="SenhaB" style="width:150px" />
+        </div>
+        <p></p>
+        <div style="text-align:center; width:250px;">
+            <button type="submit" style="width:230px; text-align:center;" class="btn btn-primary">
+                Confirma
+            </button>
+        </div>
+    </div>
+</form>
+
+@if (TempData["ErrosModal"] != null)
+{
+    <partial name="Erros" />
+}
+
+@if (TempData["AvisosModal"] != null)
+{
+    <partial name="Avisos" />
+}
+
+ 
+
+
+ 
+

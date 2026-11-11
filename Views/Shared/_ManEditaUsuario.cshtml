@@ -1,0 +1,86 @@
+﻿@using PrjIMV_MVC_CORE.Models.UsuarioModel
+@model ManUserViewModel
+
+@{
+    var nomeUsuario = Context.Session.GetString("nomeUsuario");
+}
+
+<div class="text-center">
+    <h4 class="display-4">Manutenção de Usuários</h4><p></p>Usuário: @nomeUsuario
+    <hr />
+
+    <table>
+        <tr>
+            <td>
+                <form method="post">
+                    <input type="hidden" asp-for="selecionado.Id" />
+                    <table style="text-align:left">
+                        <tr>
+                            <td style="width:150px"><span>Nome:</span></td>
+                            <td><input type="text" asp-for="selecionado.Nome" style="width:300px" /></td>
+                        </tr>
+                        <tr>
+                            <td><span>Sobrenome:</span></td>
+                            <td><input type="text" asp-for="selecionado.Sobrenome" style="width:300px" /></td>
+                        </tr>
+                        <tr>
+                            <td><span>E-mail:</span></td>
+                            <td><input type="email" asp-for="selecionado.Email.emailLocal" style="width:300px" /></td>
+                        </tr>
+                        <tr>
+                            <td><span>CPF:</span></td>
+                            <td><input type="text" asp-for="selecionado.Cpf.cpfLocal" style="width:300px" /></td>
+                        </tr>
+                        <tr>
+                            <td><span>Login:</span></td>
+                            <td><input type="text" value="@Model.selecionado.Login" style="width:300px" disabled /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align:center; border:solid; border-width:1px">
+                                <table>
+                                    <tr><td style="text-align:left"><span>Perfil:</span></td></tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" asp-for="selecionado.Perfil.TipoPerfil" value="@TipoPerfil.TPaciente" /> Paciente
+                                            <input type="radio" asp-for="selecionado.Perfil.TipoPerfil" value="@TipoPerfil.TMedico" /> Médico
+                                            <input type="radio" asp-for="selecionado.Perfil.TipoPerfil" value="@TipoPerfil.TFuncionario" /> Recepção
+                                            <input type="radio" asp-for="selecionado.Perfil.TipoPerfil" value="@TipoPerfil.TAdministrador" /> Adm
+                                            <input type="radio" asp-for="selecionado.Perfil.TipoPerfil" value="@TipoPerfil.TDesenvolvedor" /> Des
+                                            <input type="radio" asp-for="selecionado.Perfil.TipoPerfil" value="@TipoPerfil.TVisitante" /> Visitante
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align:center">
+                                <input type="checkbox" asp-for="selecionado.Ativo" /> Usuário ativo
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align:center">
+                                <button type="submit" name="acao" value="salvar"> @Model.tituloBotaoSalvar </button>&nbsp;&nbsp;
+                                <button type="button" onclick="window.location='/Home/Index'"> Sair </button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+            <td style="width:30px">
+                &nbsp;
+            </td>
+            <td style="vertical-align:top">
+                <form method="post">
+                    <table>
+                        <tr>
+                            <td style="text-align:left"><span>Buscar pelo ID&nbsp;</span></td>
+                            <td style="text-align:left"><input type="text" asp-for="codigo" style="width:50px" /></td>
+                            <td style="text-align:left"><button type="submit" name="acao" value="buscar"> OK </button></td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <hr />
+</div>

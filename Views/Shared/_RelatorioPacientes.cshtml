@@ -1,0 +1,40 @@
+﻿@using PrjIMV_MVC_CORE.Models.PacienteModel
+
+<h3>Pacientes Cadastrados</h3>
+
+@model CadPacienteViewModel
+
+<div style="width: 1280px; height:300px; overflow-x: auto; overflow-y: auto ">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Email</th>
+                <th>Cpf</th>
+                <th>Situação</th>
+                <th>Sexo</th>
+                <th>Responsável</th>
+                 
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Paciente c in Model.listaPacientes)
+            {
+                <tr>
+                    <td>@c.Id</td>
+                    <td>@c.Nome</td>
+                    <td>@c.Sobrenome</td>
+                    <td>@c.Email.email</td>
+                    <td>@(String.Format("{0:00#-###-###/##}", long.Parse((c.Cpf.cpf+"").Where(char.IsDigit).ToArray())))</td>
+                    <td>@c.Imc.Diagnostico()</td>
+                    <td>@c.Sexo</td>
+                    <td>@c.Responsavel.Nome</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

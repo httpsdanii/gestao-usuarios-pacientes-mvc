@@ -1,0 +1,10 @@
+﻿@using PrjIMV_MVC_CORE.Models.PacienteModel
+@{
+    ViewData["Title"] = "Manutenção de Pacientes";
+    var nomeUsuario = Context.Session.GetString("nomeUsuario");
+}
+
+@model ManPacienteViewModel
+
+<partial name="_ManEditaPaciente" model="Model" />
+<partial name="_ManRelatorioPacientes" model="Model" />

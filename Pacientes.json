@@ -1,0 +1,162 @@
+[
+  {
+    "Id": "0001",
+    "Imc": {
+      "Peso": 65,
+      "Altura": 1.65
+    },
+    "Sexo": "F",
+    "Nome": "Maria do ros\u00E1rio",
+    "Sobrenome": "Silva",
+    "Cpf": {
+      "cpfLocal": "32369280778"
+    },
+    "Email": {
+      "emailLocal": "msila@yahoo.com"
+    }
+  },
+  {
+    "Id": "0002",
+    "Imc": {
+      "Peso": 95,
+      "Altura": 1.95
+    },
+    "Sexo": "F",
+    "Nome": "Manoel Carlso",
+    "Sobrenome": "Silveira",
+    "Cpf": {
+      "cpfLocal": "323.692.807-78"
+    },
+    "Email": {
+      "emailLocal": "halrangel@yahoo.com.br"
+    }
+  },
+  {
+    "Id": "0003",
+    "Imc": {
+      "Peso": 108,
+      "Altura": 1.79
+    },
+    "Sexo": "M",
+    "Nome": "Helio Augusto",
+    "Sobrenome": "Lima Rangel",
+    "Cpf": {
+      "cpfLocal": "32369280778"
+    },
+    "Email": {
+      "emailLocal": "rangel@yahoo.com.br"
+    }
+  },
+  {
+    "Id": "0004",
+    "Imc": {
+      "Peso": 0,
+      "Altura": 0
+    },
+    "Sexo": "M",
+    "Nome": "Joaquim ",
+    "Sobrenome": "Jos\u00E9",
+    "Cpf": {
+      "cpfLocal": "312.015.090-84"
+    },
+    "Email": {
+      "emailLocal": "joca@yahoo.com"
+    }
+  },
+  {
+    "Id": "0005",
+    "Imc": {
+      "Peso": 60,
+      "Altura": 1.6
+    },
+    "Sexo": "N",
+    "Nome": "Nina Maria",
+    "Sobrenome": "Bueno",
+    "Cpf": {
+      "cpfLocal": "039.895.150-04"
+    },
+    "Email": {
+      "emailLocal": "nina@yahoo.con.br"
+    }
+  },
+  {
+    "Id": "0006",
+    "Imc": {
+      "Peso": 77,
+      "Altura": 1.75
+    },
+    "Sexo": "M",
+    "Nome": "Pedro Americo",
+    "Sobrenome": "Silva",
+    "Cpf": {
+      "cpfLocal": "212.329.100-58"
+    },
+    "Email": {
+      "emailLocal": "s@silca.com"
+    }
+  },
+  {
+    "Id": "0007",
+    "Imc": {
+      "Peso": 60,
+      "Altura": 1.9
+    },
+    "Sexo": "M",
+    "Nome": "Pedro Paulo",
+    "Sobrenome": "Rangel",
+    "Cpf": {
+      "cpfLocal": "495.101.940-00"
+    },
+    "Email": {
+      "emailLocal": "ppr@gmail.com"
+    }
+  },
+  {
+    "Id": "0008",
+    "Imc": {
+      "Peso": 108,
+      "Altura": 1.7
+    },
+    "Sexo": "M",
+    "Nome": "Jose Carlos",
+    "Sobrenome": "do Santos Silva",
+    "Cpf": {
+      "cpfLocal": "549.837.800-92"
+    },
+    "Email": {
+      "emailLocal": "Josecarlos234@gmail.com"
+    }
+  },
+  {
+    "Id": "0009",
+    "Imc": {
+      "Peso": 80,
+      "Altura": 1.98
+    },
+    "Sexo": "M",
+    "Nome": "Roberto Carlos",
+    "Sobrenome": "Silveira",
+    "Cpf": {
+      "cpfLocal": "092.626.635-79"
+    },
+    "Email": {
+      "emailLocal": "rcs@gmail.com.br"
+    }
+  },
+  {
+    "Id": "0010",
+    "Imc": {
+      "Peso": 80,
+      "Altura": 1.7
+    },
+    "Sexo": "M",
+    "Nome": "Antonio Arantes",
+    "Sobrenome": "Rangel",
+    "Cpf": {
+      "cpfLocal": "680.506.340-00"
+    },
+    "Email": {
+      "emailLocal": "antonioarantes@gmial.com"
+    }
+  }
+]

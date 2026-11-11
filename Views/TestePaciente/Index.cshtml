@@ -1,0 +1,19 @@
+﻿@using PrjIMV_MVC_CORE.Controllers
+@using PrjIMV_MVC_CORE.Models.PessoaModel
+
+@model TesteViewModelPaciente
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Teste Paciente</h1> 
+        <h4>
+            Paciente:
+            @if (Model.paciente != null)
+                @($"Paciente: {Model.paciente.Nome}, IMC: {Model.paciente.Imc.Diagnostico()}")
+        
+        </h4>
+</div>
+
+
+

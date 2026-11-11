@@ -1,0 +1,49 @@
+﻿@using PrjIMV_MVC_CORE.Models.LoginModel
+
+
+@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";    
+}
+
+<form asp-action="Index" method="post">
+
+     
+        <h2>Login do Sistema</h2>
+        <div>
+            <label asp-for="Login" style="width:80px"></label>
+            <input asp-for="Login" style="width:150px" />
+
+        </div>
+
+        <div>
+            <label asp-for="Senha" style="width:80px"></label>
+            <input asp-for="Senha" style="width:150px" />         
+        </div>
+        <p></p>
+
+        <div style="text-align:center; width:250px;">
+            <button type="submit" style="width:230px; text-align:center;" class="btn btn-primary">
+                Entrar
+            </button>
+        </div>
+
+        <div>
+            <hr />
+        </div>
+
+    @if (TempData["ErrosModal"] != null)
+    {
+        <partial name="Erros" />
+    }
+
+    @if (TempData["AvisosModal"] != null)
+    {
+        <partial name="Avisos" />
+    }
+  
+   
+
+</form>
+

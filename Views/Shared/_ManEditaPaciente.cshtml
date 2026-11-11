@@ -1,0 +1,96 @@
+﻿<form method="post">
+
+    @model ManPacienteViewModel
+
+    @{
+        var nomeUsuario = Context.Session.GetString("nomeUsuario");
+    }
+
+    <div class="text-center">
+        <h4 class="display-4">Manutenção de Pacientes</h4><p></p>Usuário: @nomeUsuario
+        <hr />
+
+        <table>
+            <tr>
+                <td>
+
+                    <table>
+                        <tr>
+                            <td colspan='2' style='text-align:left'><span>Nome:</span></td>
+                            <td colspan='4'><input type="text" asp-for="selecionado.Nome" value="@Model.selecionado.Nome" style="width:300px" disabled /></td>
+                        </tr>
+                        <tr>
+                            <td colspan='2' style='text-align:left'><span>Sobrenome:</span></td>
+                            <td colspan='4'><input type="text" asp-for="selecionado.Sobrenome" value="@Model.selecionado.Sobrenome" style="width:300px" disabled /></td>
+                        </tr>
+                        <tr>
+                            <td colspan='2' style='text-align:left'><span>E-mail:</span></td>
+                            <td colspan='4'><input type="email" asp-for="selecionado.Email.emailLocal" value="@Model.selecionado.Email.emailLocal" style="width:300px" disabled /></td>
+                        </tr>
+                        <tr>
+                            <td colspan='2' style='text-align:left'><span>CPF:</span></td>
+                            <td colspan='4'><input type="text" asp-for="selecionado.Cpf.cpfLocal" value="@Model.selecionado.Cpf.cpfLocal" style="width:300px" disabled /></td>
+                        </tr>
+                        <tr>
+                            <td colspan='2' style='text-align:left'><span>Peso:</span></td>
+                            <td style='text-align:left'><input type="Text" asp-for="selecionado.Imc.Peso" value="@Model.selecionado.Imc.Peso" disabled style="width:100px" /></td>
+
+                            <td style='text-align:left'><span>Altura:</span></td>
+                            <td style='text-align:left'><input type="Text" asp-for="selecionado.Imc.Altura" value="@Model.selecionado.Imc.Altura" disabled style="width:100px" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan='2' style='text-align:left'><span>Peso:</span></td>
+                            <td style='text-align:left'><input type="Text" asp-for="pesoEditado" value="@Model.selecionado.Imc.Peso" style="width:100px" /></td>
+
+                            <td style='text-align:left'><span>Altura:</span></td>
+                            <td style='text-align:left'><input type="Text" asp-for="alturaEditada" value="@Model.selecionado.Imc.Altura" style="width:100px" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" style="text-align:center">
+                                <input type="radio" asp-for="selecionado.Sexo" value="M" disabled /> Masculino
+                                <input type="radio" asp-for="selecionado.Sexo" value="F" disabled /> Feminino
+                                <input type="radio" asp-for="selecionado.Sexo" hidden='true' checked=true value="N" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" style="text-align:center">
+                                <button type="submit"> @Model.tituloBotaoSalvar </button>&nbsp;&nbsp;
+                                <button type="button" onclick="window.location='/Home/Index'"> Sair </button>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+                <td style="width:30px">
+                    &nbsp;
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td style='text-align:left'><span>Buscar pelo ID   </span></td>
+                            <td style='text-align:left'> <input type="text" asp-for="codigo" value="@Model.codigo" style="width:50px" /> </td>
+                            <td style='text-align:left'> <button type="submit"> OK </button> </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width:30px">
+                    &nbsp;
+                </td>
+                @{
+                    if (Model.menor.Nome != "")
+                    {
+                        <td>
+                            <table>
+                                <tr><td><span style="font-size:16px;">Menor IMC: @Model.menor.Nome</span></td><td><span style="font-size:16px;">@Model.menor.Imc.Diagnostico()</span></td></tr>
+                                <tr><td><span style="font-size:16px;">Maior IMC: @Model.maior.Nome</span></td><td><span style="font-size:16px;">@Model.maior.Imc.Diagnostico()</span></td></tr>
+                            </table>
+                        </td>
+                    }
+                }
+            </tr>
+        </table>
+        <hr />
+    </div>
+</form>
+

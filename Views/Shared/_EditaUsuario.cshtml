@@ -1,0 +1,64 @@
+﻿@using PrjIMV_MVC_CORE.Models.UsuarioModel
+<form method="post">
+
+    @model CadUserViewModel
+
+
+    @{
+        var nomeUsuario = Context.Session.GetString("nomeUsuario");
+    }
+
+    <div class="text-center">
+        <h4 class="display-4">Cadastro de Usuários</h4>Usuário: @nomeUsuario
+        <hr />
+
+        <table style="text-align:left">
+            <tr>
+                <td><span>Nome:</span></td>
+                <td><input type="text" asp-for="novoUsuario.Nome" value="@Model.novoUsuario.Nome" style="width:300px" /></td>
+            </tr>
+            <tr>
+                <td style="width:150px"><span>Sobrenome:</span></td>
+                <td><input type="text" asp-for="novoUsuario.Sobrenome" value="@Model.novoUsuario.Sobrenome" style="width:300px" /></td>
+            </tr>
+            <tr>
+                <td><span>E-mail:</span></td>
+                <td><input type="email" asp-for="novoUsuario.Email.emailLocal" value="@Model.novoUsuario.Email.emailLocal" style="width:300px" /></td>
+            </tr>
+            <tr>
+                <td><span>CPF:</span></td>
+                <td><input type="text" asp-for="novoUsuario.Cpf.cpfLocal" value="@Model.novoUsuario.Cpf.cpfLocal" style="width:300px" /></td>
+            </tr>
+            <tr>
+                <td><span>Login:</span></td>
+                <td><input type="text" asp-for="novoUsuario.Login" value="@Model.novoUsuario.Login" style="width:300px" /></td>
+            </tr>
+
+            <td colspan="2" style="text-align:center; border:solid; border-width:1px">
+                <table >
+                    <tr><td style="text-align:left"><span>Perfil:</span></td></tr>
+                    <tr>
+                        <td>
+                            <input type="radio" asp-for="novoUsuario.Perfil.TipoPerfil" value="@TipoPerfil.TPaciente" /> Paciente
+                            <input type="radio" asp-for="novoUsuario.Perfil.TipoPerfil" value="@TipoPerfil.TMedico" /> Médico
+                            <input type="radio" asp-for="novoUsuario.Perfil.TipoPerfil" value="@TipoPerfil.TFuncionario" /> Recepção
+                            <input type="radio" asp-for="novoUsuario.Perfil.TipoPerfil" value="@TipoPerfil.TAdministrador" /> Adm
+                            <input type="radio" asp-for="novoUsuario.Perfil.TipoPerfil" value="@TipoPerfil.TDesenvolvedor" /> Des
+                            <input type="radio" asp-for="novoUsuario.Perfil.TipoPerfil" value="@TipoPerfil.TVisitante" /> Visitante
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <tr>
+                <td colspan="2" style="text-align:center">
+                    <button type="submit"> @Model.tituloBotaoSalvar </button>&nbsp;&nbsp;
+                    <button type="button" onclick="window.location='/Home/Index'"> Sair </button>
+                </td>
+            </tr>
+
+        </table>
+
+        <hr />
+    </div>
+
+</form>

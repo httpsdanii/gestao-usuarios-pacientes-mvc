@@ -1,0 +1,40 @@
+﻿@using PrjIMV_MVC_CORE.Models.PessoaModel
+@using PrjIMV_MVC_CORE.Models.UsuarioModel
+<h3>Usuários cadastrados</h3>
+
+@model CadUserViewModel
+
+<div style="width: 1280px; height:300px; overflow-x: auto; overflow-y: auto ">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Login</th>
+                <th>Email</th>
+                <th>Cpf</th>
+                <td>Perfil</td>
+                <td>Logado</td>
+                <th>Ativo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Usuario c in Model.listaUsuarios)
+            {
+                <tr>
+                    <td>@c.Id</td>
+                    <td>@c.Nome</td>
+                    <td>@c.Sobrenome</td>
+                    <td>@c.Login</td>
+                    <td>@c.Email.email</td>                   
+                    <td>@Cpf.Formata(c.Cpf.cpf)</td>
+                    <td>@c.Perfil.TipoPerfil.ToString()</td>
+                    <td>@c.logado()</td>
+                    <td>@(c.Ativo ? "Sim" : "Não")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
